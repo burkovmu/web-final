@@ -11,13 +11,15 @@ import WorkflowSection from '@/components/WorkflowSection';
 export default function Home() {
   return (
     <main className="bg-[#1d1e22]">
-      <HeroSection />
-      <AboutSection />
-      <ServicesSection />
-      <ProjectsSection />
-      <WorkflowSection />
-      <ContactSection />
-      <Footer />
+      <div className="content-wrapper">
+        <HeroSection />
+        <AboutSection />
+        <ServicesSection />
+        <ProjectsSection />
+        <WorkflowSection />
+        <ContactSection />
+        <Footer />
+      </div>
     </main>
   );
 }

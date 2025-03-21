@@ -22,7 +22,7 @@ const projectTypes = [
 export default function ContactSection() {
   return (
     <SectionWrapper className="bg-[#1d1e22] relative">
-      <div className="ml-20"> {/* Отступ для бокового меню */}
+      <div className="lg:ml-20"> {/* Отступ только для десктопа */}
         <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Левая часть с заголовком */}
           <div className="lg:w-1/3 bg-[#feda6a] p-8 lg:p-16 flex items-center">
@@ -31,7 +31,7 @@ export default function ContactSection() {
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.3 }}
             >
-              <h2 className="text-5xl lg:text-6xl font-stolzl text-[#1d1e22] leading-tight mb-6">
+              <h2 className="text-4xl lg:text-6xl font-stolzl text-[#1d1e22] leading-tight mb-6">
                 Давайте создадим что-то особенное
               </h2>
               <p className="text-[#1d1e22]/80 text-lg">
@@ -46,7 +46,7 @@ export default function ContactSection() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="space-y-8"
+              className="space-y-8 max-w-4xl mx-auto"
             >
               {/* Основная информация */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

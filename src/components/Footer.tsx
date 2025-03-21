@@ -20,7 +20,7 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer className="bg-[#1d1e22] relative overflow-hidden">
-      <div className="ml-20"> {/* Отступ для бокового меню */}
+      <div className="lg:ml-20"> {/* Отступ только для десктопа */}
         <div className="container mx-auto px-4 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
             {/* Левая колонка */}
@@ -33,7 +33,7 @@ export default function Footer() {
               >
                 <div className="absolute -left-4 top-0 w-[2px] h-full bg-[#feda6a]/20" />
                 <div className="pl-8">
-                  <h3 className="text-4xl font-stolzl text-[#d4d4dc] mb-6">
+                  <h3 className="text-3xl lg:text-4xl font-stolzl text-[#d4d4dc] mb-6">
                     Давайте создадим<br />что-то особенное
                   </h3>
                   <p className="text-[#d4d4dc]/60 text-lg max-w-md mb-8">
@@ -41,7 +41,7 @@ export default function Footer() {
                   </p>
                   <Link 
                     href="/contacts"
-                    className="inline-block px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium group overflow-hidden relative"
+                    className="inline-block w-full md:w-auto px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium group overflow-hidden relative"
                   >
                     <div className="absolute inset-0 bg-[#1d1e22] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
                     <span className="relative z-10 group-hover:text-[#feda6a] transition-colors duration-300">
@@ -111,8 +111,8 @@ export default function Footer() {
             viewport={{ once: true }}
             className="mt-16 pt-8 border-t border-[#393f4d] flex flex-col md:flex-row justify-between items-center gap-4 text-[#d4d4dc]/40"
           >
-            <p>© 2024 Mishlen Team. Все права защищены.</p>
-            <div className="flex gap-8">
+            <p className="text-center md:text-left">© 2024 Mishlen Team. Все права защищены.</p>
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left">
               <Link href="/privacy" className="hover:text-[#feda6a] transition-colors">
                 Политика конфиденциальности
               </Link>

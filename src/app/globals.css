@@ -274,3 +274,50 @@ html {
   writing-mode: vertical-rl;
   text-orientation: mixed;
 }
+
+/* Mobile styles */
+@media (max-width: 1023px) {
+  body {
+    padding-top: 4rem; /* Отступ под фиксированной шапкой */
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  /* Адаптивные размеры текста */
+  h1 {
+    font-size: 2.5rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* Адаптивные отступы */
+  .section-padding {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  /* Сетка для мобильных устройств */
+  .grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Отступы для контента */
+  .content-wrapper {
+    margin-left: 0 !important;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .content-wrapper {
+    margin-left: 5rem;
+  }
+}
