@@ -1,5 +1,6 @@
 import './globals.css';
 import CustomCursor from '@/components/CustomCursor';
+import Navigation from '@/components/Navigation';
 import { stolzl } from './fonts';
 
 export const metadata = {
@@ -15,6 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={stolzl.variable}>
       <body>
+        <Navigation />
         {children}
         <CustomCursor />
       </body>

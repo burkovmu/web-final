@@ -49,9 +49,9 @@ export default function HeroSection() {
                   transition={{ delay: 0.3 }}
                   className="text-8xl font-stolzl text-[#d4d4dc] leading-tight"
                 >
-                  Создаем<br />
-                  цифровое<br />
-                  будущее
+                  Добавим<br />
+                  звезд<br />
+                  вашему бизнесу
                 </motion.h1>
 
                 <motion.p 
