@@ -55,7 +55,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
       onMouseLeave={() => setIsHovered(false)}
       className="relative group"
     >
-      <div className="relative overflow-hidden bg-[#1d1e22] p-12 h-full border border-[#393f4d] transition-all duration-500">
+      <div className="relative overflow-hidden bg-[#111113] p-12 h-full border border-[#393f4d] transition-all duration-500">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ 
@@ -133,7 +133,7 @@ const ServiceCard = ({ service, index }: { service: typeof services[0], index: n
 
 export default function ServicesSection() {
   return (
-    <SectionWrapper className="bg-[#1d1e22] py-32">
+    <SectionWrapper className="bg-[#111113] py-32">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 0.03, scale: 1 }}

@@ -12,7 +12,7 @@ const features = [
 
 export default function HeroSection() {
   return (
-    <SectionWrapper className="bg-[#1d1e22] min-h-screen flex items-center">
+    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 

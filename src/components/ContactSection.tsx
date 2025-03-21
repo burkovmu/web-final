@@ -21,7 +21,7 @@ const projectTypes = [
 
 export default function ContactSection() {
   return (
-    <SectionWrapper className="bg-[#1d1e22] relative">
+    <SectionWrapper className="bg-[#111113] relative">
       <div className="lg:ml-20"> {/* Отступ только для десктопа */}
         <div className="flex flex-col lg:flex-row min-h-screen">
           {/* Левая часть с заголовком */}

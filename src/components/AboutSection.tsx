@@ -118,7 +118,7 @@ export default function AboutSection() {
           className="relative"
         >
           {/* Основной контент */}
-          <div className="relative bg-[#1d1e22] p-16">
+          <div className="relative bg-[#111113] p-16">
             {/* Декоративные элементы */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -129,7 +129,7 @@ export default function AboutSection() {
               24
             </motion.div>
 
-            <div className="absolute top-0 left-0 w-[2px] h-full bg-[#feda6a]/20" />
+            <div className="absolute top-0 left-0 w-[2px] h-full bg-[#111113] group-hover:h-full transition-all duration-300" />
             
             <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
               <div className="flex-1">
@@ -167,8 +167,8 @@ export default function AboutSection() {
               >
                 <div className="relative flex flex-col gap-4">
                   <button className="relative px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium group-hover:bg-[#feda6a]/90 transition-all">
-                    <div className="absolute left-0 top-0 w-[2px] h-0 bg-[#1d1e22] group-hover:h-full transition-all duration-300" />
-                    <div className="absolute right-0 bottom-0 w-[2px] h-0 bg-[#1d1e22] group-hover:h-full transition-all duration-300" />
+                    <div className="absolute left-0 top-0 w-[2px] h-0 bg-[#111113] group-hover:h-full transition-all duration-300" />
+                    <div className="absolute right-0 bottom-0 w-[2px] h-0 bg-[#111113] group-hover:h-full transition-all duration-300" />
                     Обсудить проект
                   </button>
                   <span className="text-[#d4d4dc]/40 text-sm text-center">

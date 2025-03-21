@@ -35,7 +35,7 @@ export default function Navigation() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="fixed left-0 top-0 h-screen w-20 bg-[#1d1e22] z-50 flex flex-col items-center justify-between py-8 hidden lg:flex"
+          className="fixed left-0 top-0 h-screen w-20 z-50 flex flex-col items-center justify-between py-8 hidden lg:flex"
         >
           <button
             onClick={() => setIsMenuOpen(true)}
@@ -67,7 +67,7 @@ export default function Navigation() {
           initial={{ opacity: 0, y: -100 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
-          className="fixed top-0 left-0 right-0 h-16 bg-[#1d1e22] z-50 flex items-center justify-between px-4 border-b border-[#feda6a]/10"
+          className="fixed top-0 left-0 right-0 h-16 backdrop-blur-sm bg-[#111113]/80 z-50 flex items-center justify-between px-4 border-b border-[#feda6a]/10"
         >
           <div className="text-[#d4d4dc] text-lg font-stolzl">Mishlen Team</div>
           <button
@@ -101,7 +101,7 @@ export default function Navigation() {
               animate={{ x: 0 }}
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.4 }}
-              className={`fixed left-0 ${isMobile ? 'top-16' : 'top-0'} w-full max-w-xl h-[calc(100vh-4rem)] bg-[#1d1e22] z-50 p-20`}
+              className={`fixed left-0 ${isMobile ? 'top-16' : 'top-0'} w-full max-w-xl h-[calc(100vh-4rem)] backdrop-blur-sm bg-[#111113]/90 z-50 p-20`}
             >
               <button
                 onClick={() => setIsMenuOpen(false)}

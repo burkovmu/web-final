@@ -10,8 +10,9 @@ import WorkflowSection from '@/components/WorkflowSection';
 
 export default function Home() {
   return (
-    <main className="bg-[#1d1e22]">
-      <div className="content-wrapper">
+    <main className="relative min-h-screen">
+      {/* Основной контент */}
+      <div className="relative content-wrapper">
         <HeroSection />
         <AboutSection />
         <ServicesSection />

@@ -34,15 +34,10 @@
   html {
     font-family: var(--font-stolzl), system-ui, sans-serif;
   }
-}
 
-body {
-  @apply bg-[#1d1e22];
-  color: rgb(var(--foreground-rgb));
-  background: rgb(var(--background-rgb));
-  cursor: none;
-  min-height: 100vh;
-  overflow-x: hidden;
+  body {
+    @apply bg-[#111113];
+  }
 }
 
 /* Hide default cursor when custom cursor is active */
@@ -278,7 +273,7 @@ html {
 /* Mobile styles */
 @media (max-width: 1023px) {
   body {
-    padding-top: 4rem; /* Отступ под фиксированной шапкой */
+    padding-top: 4rem;
   }
 
   .container {
@@ -286,7 +281,6 @@ html {
     padding-right: 1rem;
   }
 
-  /* Адаптивные размеры текста */
   h1 {
     font-size: 2.5rem !important;
     line-height: 1.2 !important;
@@ -297,19 +291,16 @@ html {
     line-height: 1.3 !important;
   }
 
-  /* Адаптивные отступы */
   .section-padding {
     padding-top: 3rem;
     padding-bottom: 3rem;
   }
 
-  /* Сетка для мобильных устройств */
   .grid {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
 
-  /* Отступы для контента */
   .content-wrapper {
     margin-left: 0 !important;
   }

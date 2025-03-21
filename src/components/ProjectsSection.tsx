@@ -37,7 +37,7 @@ const projects = [
 
 export default function ProjectsSection() {
   return (
-    <SectionWrapper className="bg-[#1d1e22] py-32">
+    <SectionWrapper className="bg-[#111113] py-32">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-start mb-20">
           <motion.span 
@@ -99,7 +99,7 @@ export default function ProjectsSection() {
                     {project.tags.map((tag, tagIndex) => (
                       <span
                         key={tagIndex}
-                        className="text-xs px-3 py-1 rounded-full bg-[#1d1e22] text-[#feda6a]"
+                        className="text-xs px-3 py-1 rounded-full bg-[#111113] text-[#feda6a]"
                       >
                         {tag}
                       </span>
