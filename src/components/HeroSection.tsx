@@ -47,11 +47,11 @@ export default function HeroSection() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.3 }}
-                  className="text-8xl font-stolzl text-[#d4d4dc] leading-tight"
+                  className="text-7xl font-stolzl text-[#d4d4dc] leading-tight"
                 >
-                  Добавим<br />
-                  звезд<br />
-                  вашему бизнесу
+                  Создаем сайты,<br />
+                  достойные<br />
+                  звезд
                 </motion.h1>
 
                 <motion.p 
@@ -93,7 +93,7 @@ export default function HeroSection() {
             transition={{ delay: 0.5, duration: 1 }}
             className="relative"
           >
-            <div className="grid grid-cols-2 gap-8">
+            <div className="grid grid-cols-2 gap-6">
               {features.map((feature, index) => (
                 <motion.div
                   key={feature.number}
