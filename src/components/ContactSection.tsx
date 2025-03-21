@@ -3,89 +3,156 @@
 import { motion } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
 
+const budgets = [
+  '50 000 – 200 000 ₽',
+  '200 000 – 500 000 ₽',
+  '500 000 – 1 000 000 ₽',
+  'от 1 000 000 ₽'
+];
+
+const projectTypes = [
+  'Лендинг',
+  'Корпоративный сайт',
+  'Интернет-магазин',
+  'Веб-приложение',
+  'Мобильное приложение',
+  'Редизайн существующего проекта'
+];
+
 export default function ContactSection() {
   return (
-    <SectionWrapper className="bg-[#feda6a] py-32">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col items-start mb-20">
-          <motion.span 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-[#1d1e22] uppercase tracking-[0.3em] text-xs font-stolzl mb-6"
-          >
-            Контакты
-          </motion.span>
-          <motion.h2 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-7xl font-stolzl text-[#1d1e22] mb-6"
-          >
-            Свяжитесь с нами
-          </motion.h2>
+    <SectionWrapper className="bg-[#1d1e22]">
+      <div className="h-screen flex flex-col lg:flex-row">
+        {/* Левая часть с заголовком */}
+        <div className="lg:w-1/3 bg-[#feda6a] p-8 lg:p-16 flex items-center">
           <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-            className="w-[120px] h-[1px] bg-[#1d1e22]"
-          />
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
-          <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.6 }}
+            transition={{ delay: 0.3 }}
+          >
+            <h2 className="text-5xl lg:text-6xl font-stolzl text-[#1d1e22] leading-tight mb-6">
+              Давайте создадим что-то особенное
+            </h2>
+            <p className="text-[#1d1e22]/80 text-lg">
+              Расскажите о своих идеях, и мы поможем воплотить их в жизнь, используя современные технологии и креативный подход.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Правая часть с формой */}
+        <div className="lg:w-2/3 p-8 lg:p-16 overflow-y-auto">
+          <motion.form 
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.5 }}
             className="space-y-8"
           >
-            <div>
-              <h3 className="text-[#1d1e22] text-xl mb-4">Адрес</h3>
-              <p className="text-[#393f4d]">ул. Примерная, 123<br />Москва, Россия</p>
+            {/* Основная информация */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Имя</label>
+                <input 
+                  type="text" 
+                  placeholder="Как к вам обращаться" 
+                  className="w-full p-3 bg-transparent text-[#d4d4dc] placeholder-[#d4d4dc]/30 border-b-2 border-[#393f4d] focus:border-[#feda6a] outline-none transition-colors"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Компания</label>
+                <input 
+                  type="text" 
+                  placeholder="Название вашей компании" 
+                  className="w-full p-3 bg-transparent text-[#d4d4dc] placeholder-[#d4d4dc]/30 border-b-2 border-[#393f4d] focus:border-[#feda6a] outline-none transition-colors"
+                />
+              </div>
             </div>
-            <div>
-              <h3 className="text-[#1d1e22] text-xl mb-4">Email</h3>
-              <p className="text-[#393f4d]">info@web2-0.ru</p>
-            </div>
-            <div>
-              <h3 className="text-[#1d1e22] text-xl mb-4">Телефон</h3>
-              <p className="text-[#393f4d]">+7 (999) 123-45-67</p>
-            </div>
-          </motion.div>
 
-          <motion.form 
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.8 }}
-            className="space-y-6"
-          >
-            <div>
-              <input 
-                type="text" 
-                placeholder="Ваше имя" 
-                className="w-full p-4 bg-white text-[#1d1e22] placeholder-[#393f4d]/50 border border-[#1d1e22]/10 focus:border-[#1d1e22] outline-none transition-colors"
-              />
+            {/* Тип проекта */}
+            <div className="space-y-3">
+              <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Тип проекта</label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+                {projectTypes.map((type) => (
+                  <label 
+                    key={type}
+                    className="relative group cursor-pointer"
+                  >
+                    <input 
+                      type="radio" 
+                      className="peer hidden" 
+                      name="projectType"
+                    />
+                    <div className="p-3 text-center border border-[#393f4d] text-[#d4d4dc] peer-checked:border-[#feda6a] peer-checked:text-[#feda6a] hover:border-[#feda6a] transition-colors">
+                      {type}
+                    </div>
+                  </label>
+                ))}
+              </div>
             </div>
-            <div>
-              <input 
-                type="email" 
-                placeholder="Email" 
-                className="w-full p-4 bg-white text-[#1d1e22] placeholder-[#393f4d]/50 border border-[#1d1e22]/10 focus:border-[#1d1e22] outline-none transition-colors"
-              />
+
+            {/* Бюджет */}
+            <div className="space-y-3">
+              <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Планируемый бюджет</label>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+                {budgets.map((budget) => (
+                  <label 
+                    key={budget}
+                    className="relative group cursor-pointer"
+                  >
+                    <input 
+                      type="radio" 
+                      className="peer hidden" 
+                      name="budget"
+                    />
+                    <div className="p-3 text-center border border-[#393f4d] text-[#d4d4dc] peer-checked:border-[#feda6a] peer-checked:text-[#feda6a] hover:border-[#feda6a] transition-colors">
+                      {budget}
+                    </div>
+                  </label>
+                ))}
+              </div>
             </div>
-            <div>
+
+            {/* Контакты */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Email</label>
+                <input 
+                  type="email" 
+                  placeholder="your@email.com"
+                  className="w-full p-3 bg-transparent text-[#d4d4dc] placeholder-[#d4d4dc]/30 border-b-2 border-[#393f4d] focus:border-[#feda6a] outline-none transition-colors"
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Телефон</label>
+                <div className="flex">
+                  <span className="p-3 text-[#d4d4dc] border-b-2 border-[#393f4d]">+7</span>
+                  <input 
+                    type="tel" 
+                    placeholder="(999) 999-99-99" 
+                    className="flex-1 p-3 bg-transparent text-[#d4d4dc] placeholder-[#d4d4dc]/30 border-b-2 border-[#393f4d] focus:border-[#feda6a] outline-none transition-colors"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Описание проекта */}
+            <div className="space-y-2">
+              <label className="block text-[#feda6a] text-sm uppercase tracking-wider">О вашем проекте</label>
               <textarea 
-                placeholder="Ваше сообщение" 
-                rows={6}
-                className="w-full p-4 bg-white text-[#1d1e22] placeholder-[#393f4d]/50 border border-[#1d1e22]/10 focus:border-[#1d1e22] outline-none transition-colors resize-none"
+                rows={4}
+                placeholder="Расскажите о ваших целях, задачах и ожиданиях от проекта"
+                className="w-full p-3 bg-transparent text-[#d4d4dc] placeholder-[#d4d4dc]/30 border-2 border-[#393f4d] focus:border-[#feda6a] outline-none transition-colors resize-none"
               ></textarea>
             </div>
-            <button 
+
+            {/* Кнопка отправки */}
+            <motion.button 
               type="submit"
-              className="px-8 py-4 bg-[#1d1e22] text-white font-medium hover:bg-[#393f4d] transition-colors"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="w-full md:w-auto px-8 py-3 bg-[#feda6a] text-[#1d1e22] font-medium hover:bg-[#feda6a]/90 transition-colors"
             >
-              Отправить
-            </button>
+              Отправить заявку
+            </motion.button>
           </motion.form>
         </div>
       </div>
