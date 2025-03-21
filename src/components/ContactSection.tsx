@@ -16,7 +16,7 @@ const projectTypes = [
   'Интернет-магазин',
   'Веб-приложение',
   'Мобильное приложение',
-  'Редизайн существующего проекта'
+  'Другое'
 ];
 
 export default function ContactSection() {
