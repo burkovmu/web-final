@@ -1,77 +1,93 @@
-import Link from 'next/link';
+'use client';
+
+import { motion } from 'framer-motion';
+
+const socialLinks = [
+  { name: 'Twitter', url: '#' },
+  { name: 'Instagram', url: '#' },
+  { name: 'LinkedIn', url: '#' },
+  { name: 'GitHub', url: '#' }
+];
+
+const navLinks = [
+  { name: 'О нас', url: '#about' },
+  { name: 'Услуги', url: '#services' },
+  { name: 'Проекты', url: '#projects' },
+  { name: 'Контакты', url: '#contact' }
+];
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="col-span-1 md:col-span-2">
-            <Link href="/" className="text-2xl font-bold mb-6 block">
-              Web Studio
-            </Link>
-            <p className="text-gray-400 max-w-md">
-              Мы создаем инновационные цифровые решения, которые помогают бизнесу 
-              достигать новых высот в современном мире технологий.
+    <footer className="bg-[#1d1e22] py-20">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
+          <div className="space-y-6">
+            <h3 className="text-[#feda6a] text-xl font-stolzl">Web 2.0</h3>
+            <p className="text-[#d4d4dc]/80 leading-relaxed">
+              Создаем инновационные веб-решения для развития вашего бизнеса в цифровую эпоху.
             </p>
+            <div className="flex gap-4">
+              {socialLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  className="text-[#d4d4dc]/60 hover:text-[#feda6a] transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Навигация</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/projects" className="text-gray-400 hover:text-white transition-colors">
-                  Проекты
-                </Link>
-              </li>
-              <li>
-                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
-                  Услуги
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
-                  О нас
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className="text-gray-400 hover:text-white transition-colors">
-                  Контакты
-                </Link>
-              </li>
-            </ul>
+          <div className="space-y-6">
+            <h3 className="text-[#feda6a] text-xl font-stolzl">Навигация</h3>
+            <nav className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  className="text-[#d4d4dc]/60 hover:text-[#feda6a] transition-colors"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
           </div>
 
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Контакты</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="mailto:hello@webstudio.com" className="text-gray-400 hover:text-white transition-colors">
-                  hello@webstudio.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+79999999999" className="text-gray-400 hover:text-white transition-colors">
-                  +7 (999) 999-99-99
-                </a>
-              </li>
-            </ul>
+          <div className="space-y-6">
+            <h3 className="text-[#feda6a] text-xl font-stolzl">Подписка</h3>
+            <p className="text-[#d4d4dc]/80 leading-relaxed">
+              Подпишитесь на нашу рассылку, чтобы быть в курсе последних новостей и обновлений.
+            </p>
+            <form className="space-y-4">
+              <input
+                type="email"
+                placeholder="Ваш email"
+                className="w-full p-4 bg-[#393f4d] text-[#d4d4dc] placeholder-[#d4d4dc]/50 border border-[#d4d4dc]/20 focus:border-[#feda6a] outline-none transition-colors"
+              />
+              <button
+                type="submit"
+                className="w-full px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium hover:bg-[#feda6a]/90 transition-colors"
+              >
+                Подписаться
+              </button>
+            </form>
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Web Studio. Все права защищены.
-          </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Twitter
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              Instagram
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
-              LinkedIn
-            </a>
+        <div className="mt-16 pt-8 border-t border-[#d4d4dc]/10">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-[#d4d4dc]/60 text-sm">
+              © 2024 Web 2.0. Все права защищены.
+            </p>
+            <div className="flex gap-8">
+              <a href="#" className="text-[#d4d4dc]/60 hover:text-[#feda6a] text-sm transition-colors">
+                Политика конфиденциальности
+              </a>
+              <a href="#" className="text-[#d4d4dc]/60 hover:text-[#feda6a] text-sm transition-colors">
+                Условия использования
+              </a>
+            </div>
           </div>
         </div>
       </div>

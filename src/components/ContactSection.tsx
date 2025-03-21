@@ -1,92 +1,94 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import SectionWrapper from './SectionWrapper';
 
 export default function ContactSection() {
   return (
-    <section className="py-20 px-4 bg-black">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-12"
-        >
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Давайте создадим
-              <br />
-              что-то amazing
-            </h2>
-            <p className="text-gray-400 text-lg mb-8">
-              Расскажите нам о вашем проекте, и мы поможем воплотить его в жизнь.
-              Наша команда готова приступить к работе над вашими идеями.
-            </p>
-            <div className="space-y-4">
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Email</h3>
-                <a href="mailto:hello@webstudio.com" className="text-gray-400 hover:text-white transition-colors">
-                  hello@webstudio.com
-                </a>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-2">Телефон</h3>
-                <a href="tel:+79999999999" className="text-gray-400 hover:text-white transition-colors">
-                  +7 (999) 999-99-99
-                </a>
-              </div>
-            </div>
-          </div>
+    <SectionWrapper className="bg-[#feda6a] py-32">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col items-start mb-20">
+          <motion.span 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-[#1d1e22] uppercase tracking-[0.3em] text-xs font-stolzl mb-6"
+          >
+            Контакты
+          </motion.span>
+          <motion.h2 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+            className="text-7xl font-stolzl text-[#1d1e22] mb-6"
+          >
+            Свяжитесь с нами
+          </motion.h2>
+          <motion.div
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+            className="w-[120px] h-[1px] bg-[#1d1e22]"
+          />
+        </div>
 
-          <motion.form
-            initial={{ opacity: 0, x: 20 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ delay: 0.6 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-[#1d1e22] text-xl mb-4">Адрес</h3>
+              <p className="text-[#393f4d]">ул. Примерная, 123<br />Москва, Россия</p>
+            </div>
+            <div>
+              <h3 className="text-[#1d1e22] text-xl mb-4">Email</h3>
+              <p className="text-[#393f4d]">info@web2-0.ru</p>
+            </div>
+            <div>
+              <h3 className="text-[#1d1e22] text-xl mb-4">Телефон</h3>
+              <p className="text-[#393f4d]">+7 (999) 123-45-67</p>
+            </div>
+          </motion.div>
+
+          <motion.form 
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.8 }}
             className="space-y-6"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Ваше имя
-              </label>
-              <input
-                type="text"
-                id="name"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors"
-                placeholder="Иван Иванов"
+              <input 
+                type="text" 
+                placeholder="Ваше имя" 
+                className="w-full p-4 bg-white text-[#1d1e22] placeholder-[#393f4d]/50 border border-[#1d1e22]/10 focus:border-[#1d1e22] outline-none transition-colors"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors"
-                placeholder="ivan@example.com"
+              <input 
+                type="email" 
+                placeholder="Email" 
+                className="w-full p-4 bg-white text-[#1d1e22] placeholder-[#393f4d]/50 border border-[#1d1e22]/10 focus:border-[#1d1e22] outline-none transition-colors"
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium mb-2">
-                Сообщение
-              </label>
-              <textarea
-                id="message"
-                rows={4}
-                className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg focus:outline-none focus:border-white/40 transition-colors resize-none"
-                placeholder="Расскажите о вашем проекте..."
-              />
+              <textarea 
+                placeholder="Ваше сообщение" 
+                rows={6}
+                className="w-full p-4 bg-white text-[#1d1e22] placeholder-[#393f4d]/50 border border-[#1d1e22]/10 focus:border-[#1d1e22] outline-none transition-colors resize-none"
+              ></textarea>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full bg-white text-black px-8 py-3 rounded-full font-medium text-lg"
+            <button 
+              type="submit"
+              className="px-8 py-4 bg-[#1d1e22] text-white font-medium hover:bg-[#393f4d] transition-colors"
             >
-              Отправить сообщение
-            </motion.button>
+              Отправить
+            </button>
           </motion.form>
-        </motion.div>
+        </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 } 
