@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
+import { useEffect, useState } from 'react';
 
 const features = [
   { number: '01', title: 'Веб-разработка', description: 'Современные технологии' },
@@ -10,10 +11,96 @@ const features = [
   { number: '04', title: 'Поддержка', description: 'Постоянное развитие' }
 ];
 
+const NightSky = () => {
+  const [stars, setStars] = useState<Array<{ x: number; y: number; size: string; animation: string }>>([]);
+  const [shootingStars, setShootingStars] = useState<Array<{ x: number; y: number; delay: number }>>([]);
+
+  useEffect(() => {
+    const generateStars = () => {
+      const newStars = [];
+      const numStars = 100; // Увеличили количество звезд
+      
+      for (let i = 0; i < numStars; i++) {
+        const x = Math.random() * 100;
+        const y = Math.random() * 100;
+        const rand = Math.random();
+        
+        // Определяем размер звезды
+        let size = 'star-tiny';
+        if (rand > 0.9) size = 'star-large-new';
+        else if (rand > 0.7) size = 'star-medium-new';
+        else if (rand > 0.4) size = 'star-small-new';
+        
+        // Определяем анимацию
+        let animation = '';
+        if (rand > 0.8) animation = 'pulse-fast';
+        else if (rand > 0.6) animation = 'pulse';
+        else if (rand > 0.4) animation = 'pulse-slow';
+        
+        newStars.push({ x, y, size, animation });
+      }
+      
+      setStars(newStars);
+    };
+
+    const generateShootingStars = () => {
+      const newShootingStars = [];
+      const numShootingStars = 3;
+      
+      for (let i = 0; i < numShootingStars; i++) {
+        const x = -(Math.random() * 20 + 10); // Начинаем за пределами экрана
+        const y = Math.random() * 30; // В верхней трети экрана
+        const delay = Math.random() * 10; // Случайная задержка до 10 секунд
+        
+        newShootingStars.push({ x, y, delay });
+      }
+      
+      setShootingStars(newShootingStars);
+    };
+
+    generateStars();
+    generateShootingStars();
+
+    // Периодически обновляем падающие звезды
+    const interval = setInterval(() => {
+      generateShootingStars();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="night-sky">
+      {stars.map((star, index) => (
+        <div
+          key={`star-${index}`}
+          className={`star-new ${star.size} ${star.animation}`}
+          style={{
+            left: `${star.x}%`,
+            top: `${star.y}%`
+          }}
+        />
+      ))}
+      {shootingStars.map((star, index) => (
+        <div
+          key={`shooting-star-${index}`}
+          className="shooting-star"
+          style={{
+            left: `${star.x}%`,
+            top: `${star.y}%`,
+            animationDelay: `${star.delay}s`
+          }}
+        />
+      ))}
+    </div>
+  );
+};
+
 export default function HeroSection() {
   return (
-    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center">
-      <div className="container mx-auto px-4">
+    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center relative overflow-hidden">
+      <NightSky />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0 }}
