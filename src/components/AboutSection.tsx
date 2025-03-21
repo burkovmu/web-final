@@ -19,7 +19,7 @@ const achievements = [
 
 export default function AboutSection() {
   return (
-    <SectionWrapper className="bg-[#393f4d] py-32 overflow-hidden">
+    <SectionWrapper className="bg-[#1d1e22] py-32 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-start mb-20">
           <motion.span 
@@ -77,7 +77,7 @@ export default function AboutSection() {
                   <div className="text-4xl font-stolzl text-[#feda6a] mb-2 group-hover:scale-110 transition-transform">
                     {stat.number}
                   </div>
-                  <div className="text-[#d4d4dc]/60 text-sm">
+                  <div className="text-[#d4d4dc]/60">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -117,9 +117,7 @@ export default function AboutSection() {
           transition={{ delay: 1.2 }}
           className="relative"
         >
-          {/* Основной контент */}
           <div className="relative bg-[#111113] p-16">
-            {/* Декоративные элементы */}
             <motion.div
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
