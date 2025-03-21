@@ -4,13 +4,13 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 const socialLinks = [
-  { name: 'Instagram', url: 'https://instagram.com' },
-  { name: 'Telegram', url: 'https://t.me' },
-  { name: 'WhatsApp', url: 'https://whatsapp.com' }
+  { name: 'Telegram', url: 'https://t.me/mishlenteam' },
+  { name: 'WhatsApp', url: 'https://wa.me/message/YWPQD6DCDXBPA1' },
+  { name: 'Instagram', url: '#' },
+  { name: 'GitHub', url: 'https://github.com/burkovmu' }
 ];
 
 const navLinks = [
-  { name: 'Главная', url: '/' },
   { name: 'О нас', url: '/about' },
   { name: 'Услуги', url: '/services' },
   { name: 'Проекты', url: '/projects' },
@@ -19,106 +19,108 @@ const navLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1d1e22] border-t border-[#393f4d]/20">
-      <div className="container mx-auto">
-        <div className="px-8 lg:px-12 py-16">
-          <div className="flex flex-col lg:flex-row justify-between items-start gap-12">
-            {/* Логотип и описание */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:max-w-xs"
-            >
-              <h3 className="text-[#feda6a] text-xl font-medium mb-4">Web Studio</h3>
-              <p className="text-[#d4d4dc]/70 text-sm leading-relaxed mb-6">
-                Создаем современные веб-сайты и приложения, которые помогают бизнесу расти и развиваться в цифровом мире.
-              </p>
-              <div className="flex gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-full bg-[#393f4d]/30 flex items-center justify-center hover:bg-[#feda6a] transition-colors group"
-                  >
-                    <span className="text-[#d4d4dc] text-sm group-hover:text-[#1d1e22] transition-colors">
-                      {social.name[0]}
-                    </span>
-                  </a>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Навигация */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex flex-col lg:flex-row gap-12"
-            >
-              <div>
-                <h4 className="text-[#feda6a] text-sm font-medium mb-4">Меню</h4>
-                <nav className="flex flex-col gap-3">
-                  {navLinks.map((link) => (
-                    <Link
-                      key={link.name}
-                      href={link.url}
-                      className="text-[#d4d4dc]/70 text-sm hover:text-[#feda6a] transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-
-              {/* Контакты */}
-              <div>
-                <h4 className="text-[#feda6a] text-sm font-medium mb-4">Контакты</h4>
-                <div className="flex flex-col gap-3">
-                  <a
-                    href="mailto:info@webstudio.ru"
-                    className="text-[#d4d4dc]/70 text-sm hover:text-[#feda6a] transition-colors"
-                  >
-                    info@webstudio.ru
-                  </a>
-                  <a
-                    href="tel:+7999999999"
-                    className="text-[#d4d4dc]/70 text-sm hover:text-[#feda6a] transition-colors"
-                  >
-                    +7 (999) 999-99-99
-                  </a>
-                  <p className="text-[#d4d4dc]/70 text-sm">
-                    Москва, ул. Примерная, 1
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-
-        {/* Копирайт */}
-        <div className="border-t border-[#393f4d]/20 px-8 lg:px-12 py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[#d4d4dc]/50 text-xs">
-              © 2024 Web Studio. Все права защищены.
-            </p>
-            <div className="flex gap-6">
-              <Link
-                href="/privacy"
-                className="text-[#d4d4dc]/50 text-xs hover:text-[#feda6a] transition-colors"
+    <footer className="bg-[#1d1e22] relative overflow-hidden">
+      <div className="ml-20"> {/* Отступ для бокового меню */}
+        <div className="container mx-auto px-4 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+            {/* Левая колонка */}
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative"
               >
+                <div className="absolute -left-4 top-0 w-[2px] h-full bg-[#feda6a]/20" />
+                <div className="pl-8">
+                  <h3 className="text-4xl font-stolzl text-[#d4d4dc] mb-6">
+                    Давайте создадим<br />что-то особенное
+                  </h3>
+                  <p className="text-[#d4d4dc]/60 text-lg max-w-md mb-8">
+                    Свяжитесь с нами, чтобы обсудить ваш проект и начать воплощать идеи в жизнь
+                  </p>
+                  <Link 
+                    href="/contacts"
+                    className="inline-block px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium group overflow-hidden relative"
+                  >
+                    <div className="absolute inset-0 bg-[#1d1e22] translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                    <span className="relative z-10 group-hover:text-[#feda6a] transition-colors duration-300">
+                      Начать проект
+                    </span>
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Правая колонка */}
+            <div className="grid grid-cols-2 gap-8">
+              {/* Социальные сети */}
+              <div className="space-y-6">
+                <h4 className="text-[#feda6a] text-sm uppercase tracking-wider">Соцсети</h4>
+                <ul className="space-y-4">
+                  {socialLinks.map((link) => (
+                    <motion.li 
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <a 
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#d4d4dc] hover:text-[#feda6a] transition-colors group flex items-center gap-2"
+                      >
+                        <div className="h-[1px] w-4 bg-[#feda6a]/20 group-hover:w-8 transition-all" />
+                        <span>{link.name}</span>
+                      </a>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Навигация */}
+              <div className="space-y-6">
+                <h4 className="text-[#feda6a] text-sm uppercase tracking-wider">Навигация</h4>
+                <ul className="space-y-4">
+                  {navLinks.map((link) => (
+                    <motion.li 
+                      key={link.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                    >
+                      <Link 
+                        href={link.url}
+                        className="text-[#d4d4dc] hover:text-[#feda6a] transition-colors group flex items-center gap-2"
+                      >
+                        <div className="h-[1px] w-4 bg-[#feda6a]/20 group-hover:w-8 transition-all" />
+                        <span>{link.name}</span>
+                      </Link>
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Нижняя часть */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="mt-16 pt-8 border-t border-[#393f4d] flex flex-col md:flex-row justify-between items-center gap-4 text-[#d4d4dc]/40"
+          >
+            <p>© 2024 Mishlen Team. Все права защищены.</p>
+            <div className="flex gap-8">
+              <Link href="/privacy" className="hover:text-[#feda6a] transition-colors">
                 Политика конфиденциальности
               </Link>
-              <Link
-                href="/terms"
-                className="text-[#d4d4dc]/50 text-xs hover:text-[#feda6a] transition-colors"
-              >
+              <Link href="/terms" className="hover:text-[#feda6a] transition-colors">
                 Условия использования
               </Link>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </footer>
