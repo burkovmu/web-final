@@ -20,7 +20,25 @@ const achievements = [
 export default function AboutSection() {
   return (
     <SectionWrapper className="bg-[#1d1e22] py-32 overflow-hidden">
-      <div className="container mx-auto px-4">
+      {/* Декоративные элементы фона */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Градиентный круг слева */}
+        <div className="absolute -left-40 top-20 w-[400px] h-[400px] rounded-full bg-gradient-to-r from-[#feda6a]/5 to-transparent blur-3xl" />
+        
+        {/* Градиентный круг справа */}
+        <div className="absolute -right-40 bottom-40 w-[500px] h-[500px] rounded-full bg-gradient-to-l from-[#feda6a]/3 to-transparent blur-3xl" />
+        
+        {/* Декоративные линии */}
+        <div className="absolute left-1/4 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-[#feda6a]/10 to-transparent" />
+        <div className="absolute right-1/3 top-0 w-[1px] h-full bg-gradient-to-b from-transparent via-[#feda6a]/5 to-transparent" />
+        
+        {/* Точки */}
+        <div className="absolute left-20 top-40 w-2 h-2 rounded-full bg-[#feda6a]/20" />
+        <div className="absolute right-32 bottom-60 w-3 h-3 rounded-full bg-[#feda6a]/10" />
+        <div className="absolute left-1/2 top-1/4 w-2 h-2 rounded-full bg-[#feda6a]/15" />
+      </div>
+
+      <div className="container mx-auto px-4 relative">
         <div className="flex flex-col items-start mb-20">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
