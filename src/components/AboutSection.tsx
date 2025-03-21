@@ -115,21 +115,68 @@ export default function AboutSection() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 }}
-          className="relative bg-[#1d1e22] p-12 rounded-lg overflow-hidden group"
+          className="relative"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-[#feda6a]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-          <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8">
-            <div>
-              <h3 className="text-2xl font-stolzl text-[#d4d4dc] mb-4">
-                Готовы обсудить ваш проект?
-              </h3>
-              <p className="text-[#d4d4dc]/60">
-                Свяжитесь с нами, и мы поможем воплотить ваши идеи в жизнь
-              </p>
+          {/* Основной контент */}
+          <div className="relative bg-[#1d1e22] p-16">
+            {/* Декоративные элементы */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 1.4, duration: 1 }}
+              className="absolute -left-4 top-0 text-[#feda6a]/10 text-9xl font-stolzl select-none"
+            >
+              24
+            </motion.div>
+
+            <div className="absolute top-0 left-0 w-[2px] h-full bg-[#feda6a]/20" />
+            
+            <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
+              <div className="flex-1">
+                <motion.div
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 1.5 }}
+                  className="text-sm uppercase tracking-[0.3em] text-[#feda6a] mb-4"
+                >
+                  Начать проект
+                </motion.div>
+                <motion.h3
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 1.6 }}
+                  className="text-4xl font-stolzl text-[#d4d4dc] mb-6"
+                >
+                  Воплотим ваши идеи <br />в digital-реальность
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ delay: 1.7 }}
+                  className="text-[#d4d4dc]/60 text-lg"
+                >
+                  От концепции до запуска — создаем проекты, которые превосходят ожидания
+                </motion.p>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.8 }}
+                className="relative group"
+              >
+                <div className="relative flex flex-col gap-4">
+                  <button className="relative px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium group-hover:bg-[#feda6a]/90 transition-all">
+                    <div className="absolute left-0 top-0 w-[2px] h-0 bg-[#1d1e22] group-hover:h-full transition-all duration-300" />
+                    <div className="absolute right-0 bottom-0 w-[2px] h-0 bg-[#1d1e22] group-hover:h-full transition-all duration-300" />
+                    Обсудить проект
+                  </button>
+                  <span className="text-[#d4d4dc]/40 text-sm text-center">
+                    Бесплатная консультация
+                  </span>
+                </div>
+              </motion.div>
             </div>
-            <button className="px-8 py-4 bg-[#feda6a] text-[#1d1e22] font-medium hover:bg-[#feda6a]/90 transition-colors whitespace-nowrap">
-              Начать проект
-            </button>
           </div>
         </motion.div>
       </div>
