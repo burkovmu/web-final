@@ -44,7 +44,7 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-[#feda6a] uppercase tracking-[0.3em] text-xs font-stolzl mb-6"
+            className="text-[#feda6a] uppercase tracking-[0.3em] text-xs font-light mb-6"
           >
             О нас
           </motion.span>
@@ -52,7 +52,7 @@ export default function AboutSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-7xl font-stolzl text-[#d4d4dc] mb-6"
+            className="text-7xl font-light text-[#d4d4dc] mb-6"
           >
             Кто мы такие
           </motion.h2>

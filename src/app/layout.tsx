@@ -1,11 +1,12 @@
 import './globals.css';
+import type { Metadata } from 'next';
 import CustomCursor from '@/components/CustomCursor';
 import Navigation from '@/components/Navigation';
-import { stolzl } from './fonts';
+import { bounded } from './fonts';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Web Studio',
-  description: 'Modern web development studio',
+  description: 'Создаем современные веб-сайты',
 };
 
 export default function RootLayout({
@@ -14,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={stolzl.variable}>
+    <html lang="ru" className={bounded.variable}>
       <body>
         <Navigation />
         {children}
