@@ -46,7 +46,7 @@ export default function ContactSection() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="space-y-8 max-w-4xl mx-auto"
+              className="space-y-8 max-w-5xl mx-auto"
             >
               {/* Основная информация */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -93,7 +93,7 @@ export default function ContactSection() {
               {/* Бюджет */}
               <div className="space-y-3">
                 <label className="block text-[#feda6a] text-sm uppercase tracking-wider">Планируемый бюджет</label>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
                   {budgets.map((budget) => (
                     <label 
                       key={budget}
@@ -104,7 +104,7 @@ export default function ContactSection() {
                         className="peer hidden" 
                         name="budget"
                       />
-                      <div className="p-3 text-center border border-[#393f4d] text-[#d4d4dc] peer-checked:border-[#feda6a] peer-checked:text-[#feda6a] hover:border-[#feda6a] transition-colors">
+                      <div className="px-4 py-3 text-center border border-[#393f4d] text-[#d4d4dc] peer-checked:border-[#feda6a] peer-checked:text-[#feda6a] hover:border-[#feda6a] transition-colors whitespace-nowrap">
                         {budget}
                       </div>
                     </label>
