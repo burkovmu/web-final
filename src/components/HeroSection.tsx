@@ -2,7 +2,6 @@
 
 import { motion } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
-import { useEffect, useState } from 'react';
 
 const features = [
   { number: '01', title: 'Веб-разработка', description: 'Современные технологии' },
@@ -11,96 +10,10 @@ const features = [
   { number: '04', title: 'Поддержка', description: 'Постоянное развитие' }
 ];
 
-const NightSky = () => {
-  const [stars, setStars] = useState<Array<{ x: number; y: number; size: string; animation: string }>>([]);
-  const [shootingStars, setShootingStars] = useState<Array<{ x: number; y: number; delay: number }>>([]);
-
-  useEffect(() => {
-    const generateStars = () => {
-      const newStars = [];
-      const numStars = 100; // Увеличили количество звезд
-      
-      for (let i = 0; i < numStars; i++) {
-        const x = Math.random() * 100;
-        const y = Math.random() * 100;
-        const rand = Math.random();
-        
-        // Определяем размер звезды
-        let size = 'star-tiny';
-        if (rand > 0.9) size = 'star-large-new';
-        else if (rand > 0.7) size = 'star-medium-new';
-        else if (rand > 0.4) size = 'star-small-new';
-        
-        // Определяем анимацию
-        let animation = '';
-        if (rand > 0.8) animation = 'pulse-fast';
-        else if (rand > 0.6) animation = 'pulse';
-        else if (rand > 0.4) animation = 'pulse-slow';
-        
-        newStars.push({ x, y, size, animation });
-      }
-      
-      setStars(newStars);
-    };
-
-    const generateShootingStars = () => {
-      const newShootingStars = [];
-      const numShootingStars = 3;
-      
-      for (let i = 0; i < numShootingStars; i++) {
-        const x = -(Math.random() * 20 + 10); // Начинаем за пределами экрана
-        const y = Math.random() * 30; // В верхней трети экрана
-        const delay = Math.random() * 10; // Случайная задержка до 10 секунд
-        
-        newShootingStars.push({ x, y, delay });
-      }
-      
-      setShootingStars(newShootingStars);
-    };
-
-    generateStars();
-    generateShootingStars();
-
-    // Периодически обновляем падающие звезды
-    const interval = setInterval(() => {
-      generateShootingStars();
-    }, 10000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="night-sky">
-      {stars.map((star, index) => (
-        <div
-          key={`star-${index}`}
-          className={`star-new ${star.size} ${star.animation}`}
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`
-          }}
-        />
-      ))}
-      {shootingStars.map((star, index) => (
-        <div
-          key={`shooting-star-${index}`}
-          className="shooting-star"
-          style={{
-            left: `${star.x}%`,
-            top: `${star.y}%`,
-            animationDelay: `${star.delay}s`
-          }}
-        />
-      ))}
-    </div>
-  );
-};
-
 export default function HeroSection() {
   return (
-    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center relative overflow-hidden">
-      <NightSky />
-      <div className="container mx-auto px-4 relative z-10">
+    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0 }}
@@ -154,30 +67,24 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.7 }}
-                  className="flex flex-col sm:flex-row gap-6"
+                  className="flex flex-col sm:flex-row gap-5"
                 >
-                  <button className="group relative inline-flex items-center justify-center py-7 px-12 font-medium uppercase tracking-wider text-sm overflow-hidden bg-gradient-to-r from-[#feda6a] to-[#e8b94c]">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#1d1e22] to-[#252629] translate-y-[102%] group-hover:translate-y-0 transition-transform duration-500 ease-out" />
-                    <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20" />
-                    <div className="absolute left-0 w-1 h-full bg-white/20 skew-x-[25deg] group-hover:-translate-x-20 transition-transform duration-1000 ease-out" />
-                    <span className="relative z-10 group-hover:text-[#feda6a] transition-colors duration-500">
+                  <button className="relative px-8 py-5 bg-[#feda6a] text-[#111113] text-sm uppercase tracking-wider font-medium overflow-hidden rounded-sm shadow-lg shadow-[#feda6a]/10 hover:shadow-[#feda6a]/30 transition-all duration-300">
+                    <div className="absolute inset-0 bg-white/10 opacity-0 hover:opacity-20 transition-opacity duration-300" />
+                    <span className="inline-flex items-center">
                       Смотреть кейсы
+                      <svg className="ml-3 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
                     </span>
-                    <svg className="relative z-10 ml-4 w-4 h-4 stroke-current group-hover:stroke-[#feda6a] transition-colors duration-500" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M5 12h14m-7-7l7 7-7 7"/>
-                    </svg>
                   </button>
-                  <button className="group relative inline-flex items-center justify-center py-7 px-12 font-medium uppercase tracking-wider text-sm text-[#d4d4dc] overflow-hidden">
-                    <div className="absolute inset-0 border border-[#feda6a]/20 group-hover:border-[#feda6a]/40 transition-colors duration-500" />
-                    <div className="absolute inset-[1px] bg-[#1d1e22]" />
-                    <div className="absolute inset-[1px] bg-gradient-to-r from-[#feda6a]/0 via-[#feda6a]/5 to-[#feda6a]/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
-                    <div className="absolute inset-0 bg-[url('/noise.svg')] opacity-20" />
-                    <span className="relative z-10 group-hover:text-[#feda6a] transition-colors duration-500">
+                  <button className="relative px-8 py-5 bg-transparent border border-[#feda6a]/30 text-[#d4d4dc] text-sm uppercase tracking-wider font-medium overflow-hidden rounded-sm hover:border-[#feda6a]/70 transition-all duration-300">
+                    <span className="inline-flex items-center">
                       Оставить заявку
+                      <svg className="ml-3 w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                        <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                      </svg>
                     </span>
-                    <svg className="relative z-10 ml-4 w-4 h-4 stroke-current group-hover:stroke-[#feda6a] transition-colors duration-500" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 5l7 7-7 7M5 12h14"/>
-                    </svg>
                   </button>
                 </motion.div>
               </div>

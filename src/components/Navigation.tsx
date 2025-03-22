@@ -50,7 +50,7 @@ export default function Navigation() {
 
           <div className="flex-1 flex items-center">
             <motion.div 
-              className="rotate-180 text-[#d4d4dc] text-lg tracking-[0.3em] font-stolzl"
+              className="rotate-180 text-[#d4d4dc] text-lg tracking-[0.3em] font-pixy"
               style={{ writingMode: 'vertical-rl' }}
             >
               Mishlen Team
@@ -69,7 +69,7 @@ export default function Navigation() {
           transition={{ duration: 0.4 }}
           className="fixed top-0 left-0 right-0 h-16 backdrop-blur-sm bg-[#111113]/80 z-50 flex items-center justify-between px-4 border-b border-[#feda6a]/10"
         >
-          <div className="text-[#d4d4dc] text-lg font-stolzl">Mishlen Team</div>
+          <div className="text-[#d4d4dc] text-lg font-pixy">Mishlen Team</div>
           <button
             onClick={() => setIsMenuOpen(true)}
             className="w-12 h-12 relative group"
