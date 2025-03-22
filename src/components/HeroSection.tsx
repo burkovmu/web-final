@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import SectionWrapper from './SectionWrapper';
+import StarryBackground from './StarryBackground';
 
 const features = [
   { number: '01', title: 'Веб-разработка', description: 'Современные технологии' },
@@ -12,8 +13,9 @@ const features = [
 
 export default function HeroSection() {
   return (
-    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center">
-      <div className="container mx-auto px-4">
+    <SectionWrapper className="bg-[#111113] min-h-screen flex items-center relative overflow-hidden">
+      <StarryBackground />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0 }}

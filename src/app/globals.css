@@ -478,3 +478,10 @@
   border-radius: 50%;
   box-shadow: 0 0 10px #feda6a;
 }
+
+@layer components {
+  /* Стили для звездного неба */
+  .shooting-star {
+    filter: blur(1px);
+  }
+}
